@@ -251,7 +251,7 @@ const MgrTag = ({ kind }) => {
     New:    { c: "var(--accent)", b: "color-mix(in srgb, var(--accent) 15%, var(--card))" },
   };
   const m = map[kind] || map.Edited;
-  return <span style={{ background: m.b, color: "var(--ink)", border: "1px solid " + m.c, fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, padding: "4px 11px", borderRadius: 6, whiteSpace: "nowrap" }}>{kind}</span>;
+  return <span style={{ background: m.b, color: "var(--ink)", border: "1px solid " + m.c, fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, padding: "4px 11px", borderRadius: 2, whiteSpace: "nowrap" }}>{kind}</span>;
 };
 
 const MgrAvatar = ({ p, size = 42 }) => (

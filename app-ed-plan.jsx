@@ -516,7 +516,7 @@ function PlStatusBadge({ status, size = 14 }) {
   const Ic = s.icon && I[s.icon];
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--sans)", fontSize: size,
-      fontWeight: 400, color: s.color, background: s.bg, border: "1px solid " + s.border, padding: "4px 11px", borderRadius: 6, whiteSpace: "nowrap" }}>
+      fontWeight: 400, color: s.color, background: s.bg, border: "1px solid " + s.border, padding: "4px 11px", borderRadius: 2, whiteSpace: "nowrap" }}>
       {Ic ? <Ic size={size} /> : null}{s.label}
     </span>
   );
