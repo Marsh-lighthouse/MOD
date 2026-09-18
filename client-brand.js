@@ -22,7 +22,7 @@
       varsDark: { "--primary": "#D6BA77", "--accent": "#93C69B", "--action": "#D6BA77", "--action-text": "#1A1A1A" },
       logo: "brand/clients/mod.svg?v=1789717242", logoWhite: "brand/clients/mod-white.svg?v=1789717242",
       icon: "brand/clients/mod-icon.svg?v=1789717242", iconWhite: "brand/clients/mod-icon-white.svg?v=1789717242",
-      railLogoH: 40, railIconH: 40, loginAlt: "Ministry of Defense",
+      railLogoH: 50, railIconH: 40, loginAlt: "Ministry of Defense",
       // Login screen only: MOD feature photo (Saudi MOD training image, user-supplied)
       loginPhoto: "brand/clients/mod-login.jpg?v=1789722739"
     },
