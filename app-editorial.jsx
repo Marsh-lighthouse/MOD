@@ -91,10 +91,13 @@ function EdRail({ activeId, onNav, collapsed, onToggle, items, showAccount = tru
   const Logo = ({ icon }) => {
     const cb = (typeof window !== "undefined" && window.LHBrand && window.LHBrand.current() !== "marsh") ? window.LHBrand.get() : null;
     if (cb) {
-      // MOD uses the same horizontal lockup everywhere (icon slots point at it too),
-      // so the collapsed rail shows the full logo scaled to fit its 74px width.
-      const h = icon ? cb.railIconH : cb.railLogoH;
-      const st = (disp) => ({ height: h, width: "auto", maxWidth: icon ? 58 : 168, objectFit: "contain", display: disp, marginRight: icon ? 0 : "auto" });
+      // Collapsed rail shows only the compact emblem (cb.icon); the expanded rail and
+      // everywhere else use the horizontal lockup (cb.logo). MOD's emblem gets a larger
+      // 66px box so it reads in the narrow collapsed rail.
+      const isModIcon = cb.id === "mod" && icon;
+      const iconMax = isModIcon ? 66 : 56;
+      const h = icon ? (isModIcon ? 66 : cb.railIconH) : cb.railLogoH;
+      const st = (disp) => ({ height: h, width: "auto", maxWidth: icon ? iconMax : 168, objectFit: "contain", display: disp, marginRight: icon ? 0 : "auto" });
       // Two variants; the active rail palette toggles via --rail-logo-white / --rail-logo-dark.
       // DGE collapsed: white outline emblem on the dark rail, colour emblem on the light steel rail.
       return (
@@ -1402,7 +1405,7 @@ function DashEditorial({ initialRoute } = {}) {
                 <button onClick={() => setMobileNav(true)} aria-label="Open menu" style={{ background: "none", border: "none", cursor: "pointer", color: MID, display: "flex", padding: 2 }}><I.menu size={24} /></button>
                 {(() => {
                   const cb = (typeof window !== "undefined" && window.LHBrand && window.LHBrand.current() !== "marsh") ? window.LHBrand.get() : null;
-                  if (cb) return <img src={cb.icon} alt={cb.label} style={{ height: cb.id === "mod" ? 22 : 26, width: "auto", maxWidth: 130, objectFit: "contain", display: "block" }} />;
+                  if (cb) return <img src={cb.logo} alt={cb.label} style={{ height: cb.id === "mod" ? 22 : 26, width: "auto", maxWidth: 130, objectFit: "contain", display: "block" }} />;
                   return (
                 <svg width="25" height="25" viewBox="0 0 43.17 44.26" style={{ display: "block", fill: MID }} aria-label="Marsh">
                   <polygon points="42.49 0 21.65 30.43 22.2 30.43 35.07 24.39 35.07 44.26 43.17 44.26 43.17 0 42.49 0" />
