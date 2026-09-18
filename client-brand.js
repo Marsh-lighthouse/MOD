@@ -23,8 +23,8 @@
       logo: "brand/clients/mod.svg?v=1789717242", logoWhite: "brand/clients/mod-white.svg?v=1789717242",
       icon: "brand/clients/mod-icon.svg?v=1789717242", iconWhite: "brand/clients/mod-icon-white.svg?v=1789717242",
       railLogoH: 40, railIconH: 40, loginAlt: "Ministry of Defense",
-      // Login screen only: MOD feature photo (placeholder until user supplies one)
-      loginPhoto: "brand/clients/mod-login.jpg"
+      // Login screen only: MOD feature photo (Saudi MOD training image, user-supplied)
+      loginPhoto: "brand/clients/mod-login.jpg?v=1789722739"
     },
     generali: {
       id: "generali", label: "General", dot: "#AA1B17",
