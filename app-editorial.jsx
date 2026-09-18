@@ -95,8 +95,8 @@ function EdRail({ activeId, onNav, collapsed, onToggle, items, showAccount = tru
       // everywhere else use the horizontal lockup (cb.logo). MOD's emblem gets a larger
       // 66px box so it reads in the narrow collapsed rail.
       const isModIcon = cb.id === "mod" && icon;
-      const iconMax = isModIcon ? 66 : 56;
-      const h = icon ? (isModIcon ? 66 : cb.railIconH) : cb.railLogoH;
+      const iconMax = isModIcon ? 52 : 56;
+      const h = icon ? (isModIcon ? 52 : cb.railIconH) : cb.railLogoH;
       const st = (disp) => ({ height: h, width: "auto", maxWidth: icon ? iconMax : 168, objectFit: "contain", display: disp, marginRight: icon ? 0 : "auto" });
       // Two variants; the active rail palette toggles via --rail-logo-white / --rail-logo-dark.
       // DGE collapsed: white outline emblem on the dark rail, colour emblem on the light steel rail.

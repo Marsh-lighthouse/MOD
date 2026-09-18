@@ -650,7 +650,7 @@ function PlCommentItem({ item, onReply, role = "me", names, onResolve, skillLabe
   const submit = () => { const t = text.trim(); if (!t) return; onReply(t); setText(""); setReplying(false); setShowReplies(true); };
   return (
     <div style={{ display: "flex", gap: 11, marginBottom: 16 }}>
-      <span style={{ width: 34, height: 34, borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: mine ? eBLUE : "var(--surface-deep)", color: "#fff", fontFamily: "var(--sans)", fontSize: 11.5, fontWeight: 700 }}>{plInitials(name)}</span>
+      <span style={{ width: 34, height: 34, borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: "var(--primary)", color: "var(--action-text)", fontFamily: "var(--sans)", fontSize: 11.5, fontWeight: 700 }}>{plInitials(name)}</span>
       <div style={{ flex: 1, minWidth: 0 }}>
         {/* The skill this comment belongs to, written small above it — so the flat
             "everything on first view" feed keeps its context without a tag pill. */}
@@ -896,7 +896,7 @@ function PlComments({ chip, onClose, onOpen, role = "me", owner = "john", names,
                 style={{ width: "100%", textAlign: "left", display: "flex", gap: 11, alignItems: "flex-start", padding: 12, borderRadius: 4, border: "1px solid " + (r.unread ? "color-mix(in srgb, var(--danger) 30%, transparent)" : "#DEDBD6"), background: "var(--card)", cursor: "pointer", marginBottom: 8, boxSizing: "border-box" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "color-mix(in srgb, var(--primary) 6%, var(--card))"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "var(--card)"}>
-                <span style={{ width: 36, height: 36, borderRadius: "50%", background: mine ? eBLUE : "var(--surface-deep)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--sans)", fontSize: 11.5, fontWeight: 700, flexShrink: 0 }}>{r.last ? plInitials(lastName) : <I.chat size={16} />}</span>
+                <span style={{ width: 36, height: 36, borderRadius: "50%", background: "var(--primary)", color: "var(--action-text)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--sans)", fontSize: 11.5, fontWeight: 700, flexShrink: 0 }}>{r.last ? plInitials(lastName) : <I.chat size={16} />}</span>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <span style={{ flex: 1, minWidth: 0, fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, color: eMID, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{r.name}</span>
