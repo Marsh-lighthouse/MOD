@@ -500,15 +500,15 @@ function plDiff(plan) {
 const PL_STATUS = {
   // MDS Badge soft-background variants: Neutral outline / Notice / Informative /
   // Positive / Negative. Colours are the exact MDS hues; fill = 85%-white tint.
-  notstarted: { label: "Not Started", color: "var(--ink)", bg: "var(--status-neutral-bg)", icon: null },
-  draft: { label: "Draft", color: "var(--ink)", bg: "var(--status-neutral-bg)", icon: null },
-  pending: { label: "Pending Approval", color: "#CB7E03", bg: "color-mix(in srgb, #CB7E03 15%, var(--card))", icon: "clock" },
+  notstarted: { label: "Not Started", color: "var(--ink)", bg: "var(--status-neutral-bg)", border: "#94918C", icon: null },
+  draft: { label: "Draft", color: "var(--ink)", bg: "var(--status-neutral-bg)", border: "#94918C", icon: null },
+  pending: { label: "Pending Approval", color: "var(--ink)", bg: "color-mix(in srgb, #CB7E03 15%, var(--card))", border: "#CB7E03", icon: "clock" },
   // The manager has opened the plan for review — no longer just queued.
-  review: { label: "In Review", color: "var(--accent)", bg: "color-mix(in srgb, var(--accent) 15%, var(--card))", icon: "eye" },
-  approved: { label: "Approved", color: "#14853D", bg: "color-mix(in srgb, #14853D 15%, var(--card))", icon: "checkCircle" },
-  rejected: { label: "Rejected", color: "#C53532", bg: "color-mix(in srgb, #C53532 15%, var(--card))", icon: "alertCircle" },
+  review: { label: "In Review", color: "var(--ink)", bg: "color-mix(in srgb, var(--accent) 15%, var(--card))", border: "var(--accent)", icon: "eye" },
+  approved: { label: "Approved", color: "var(--ink)", bg: "color-mix(in srgb, #14853D 15%, var(--card))", border: "#14853D", icon: "checkCircle" },
+  rejected: { label: "Rejected", color: "var(--ink)", bg: "color-mix(in srgb, #C53532 15%, var(--card))", border: "#C53532", icon: "alertCircle" },
   // The owner's own marker once they've finished the work — not a manager decision.
-  completed: { label: "Completed", color: "#14853D", bg: "color-mix(in srgb, #14853D 15%, var(--card))", icon: "checkCircle" },
+  completed: { label: "Completed", color: "var(--ink)", bg: "color-mix(in srgb, #14853D 15%, var(--card))", border: "#14853D", icon: "checkCircle" },
 };
 // The badge itself — same pill wherever a plan status is shown.
 function PlStatusBadge({ status, size = 14 }) {
@@ -516,7 +516,7 @@ function PlStatusBadge({ status, size = 14 }) {
   const Ic = s.icon && I[s.icon];
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--sans)", fontSize: size,
-      fontWeight: 400, color: s.color, background: s.bg, padding: "4px 11px", borderRadius: 6, whiteSpace: "nowrap" }}>
+      fontWeight: 400, color: s.color, background: s.bg, border: "1px solid " + s.border, padding: "4px 11px", borderRadius: 6, whiteSpace: "nowrap" }}>
       {Ic ? <Ic size={size} /> : null}{s.label}
     </span>
   );

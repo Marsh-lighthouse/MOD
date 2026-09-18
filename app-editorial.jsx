@@ -633,10 +633,10 @@ function EdProgram({ p, onOpen, onSystemCheck, variant, timer, timerPos = "top" 
   // ("Not started") is the outline variant (#94918C border, no fill) handled
   // in mds-folio.css off the --status-neutral-bg tell.
   const tag = state === "complete"
-    ? { label: t("statusCompleted"), fg: "#14853D", bg: "color-mix(in srgb, #14853D 15%, var(--card))" }
+    ? { label: t("statusCompleted"), fg: "var(--ink)", bg: "color-mix(in srgb, #14853D 15%, var(--card))", bd: "#14853D" }
     : state === "notstarted"
-      ? { label: t("statusNotStarted"), fg: "var(--ink)", bg: "var(--status-neutral-bg)" }
-      : { label: t("statusInProgress"), fg: "var(--accent)", bg: "color-mix(in srgb, var(--accent) 15%, var(--card))" };
+      ? { label: t("statusNotStarted"), fg: "var(--ink)", bg: "var(--status-neutral-bg)", bd: "#94918C" }
+      : { label: t("statusInProgress"), fg: "var(--ink)", bg: "color-mix(in srgb, var(--accent) 15%, var(--card))", bd: "var(--accent)" };
   return (
     <div style={{ background: "var(--card)", border: "1px solid var(--line)", borderRadius: 16, padding: 22, display: "flex", flexDirection: "column", overflow: "hidden" }}>
       {timer && timerPos === "top" && (
@@ -647,7 +647,7 @@ function EdProgram({ p, onOpen, onSystemCheck, variant, timer, timerPos = "top" 
         </div>
       )}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, marginBottom: 11 }}>
-        <span style={{ fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, letterSpacing: ".02em", color: tag.fg, background: tag.bg, padding: "4px 10px", borderRadius: 6 }}>{tag.label}</span>
+        <span style={{ fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, letterSpacing: ".02em", color: tag.fg, background: tag.bg, border: "1px solid " + tag.bd, padding: "4px 10px", borderRadius: 6 }}>{tag.label}</span>
         {timer && timerPos === "bottom" ? (
           <span style={{ fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, color: "var(--accent)", fontVariantNumeric: "tabular-nums", display: "flex", alignItems: "center", gap: 6 }}><I.clock size={14} />{cd}</span>
         ) : (
