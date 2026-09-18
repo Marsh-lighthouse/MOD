@@ -1496,7 +1496,7 @@ function DashEditorial({ initialRoute } = {}) {
           const on = scVariant === d;
           return (
             <button key={d} onClick={() => setScV(d)} title={d === "1" ? "System Check 1 — stepped flow" : d === "2" ? "System Check 2 — vertical single-page" : "System Check 3 — split step-nav layout"}
-              style={{ width: 30, height: 28, borderRadius: 7, border: "1px solid " + (on ? "var(--accent)" : "var(--line)"), background: on ? "var(--accent)" : "#fff", color: on ? "#fff" : "var(--primary)", fontFamily: "var(--sans)", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{d}</button>
+              style={{ width: 30, height: 28, borderRadius: 7, border: "1px solid " + (on ? "var(--accent)" : "var(--line)"), background: on ? "var(--accent)" : "#fff", color: on ? "var(--on-accent)" : "var(--primary)", fontFamily: "var(--sans)", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>{d}</button>
           );
         })}
       </div>

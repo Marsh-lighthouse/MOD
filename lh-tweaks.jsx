@@ -34,7 +34,7 @@ function DarkPaletteRef() {
   // Per-brand dark values (must match client-brand.js varsDark / lh-tweaks dark branch).
   const PER = {
     marsh:    { accent: "#7BA6FF", action: "#000F47", actionText: "#FFFFFF" },
-    mod:      { accent: "#8FC5B4", action: "#D6BA77", actionText: "#1A1A1A" },
+    mod:      { accent: "#93C69B", action: "#D6BA77", actionText: "#1A1A1A" },
     generali: { accent: "#FF8A85", action: "#D23A34", actionText: "#FFFFFF" },
   };
   const p = PER[brand] || PER.marsh;

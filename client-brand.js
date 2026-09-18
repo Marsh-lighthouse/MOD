@@ -19,7 +19,7 @@
       // Dark mode: gold still reads as a light fill (dark text on it); accent flips to a
       // light teal so links stay legible on the dark canvas. Running text is neutralised
       // to light ink by dark-theme.css.
-      varsDark: { "--primary": "#D6BA77", "--accent": "#8FC5B4", "--action": "#D6BA77", "--action-text": "#1A1A1A" },
+      varsDark: { "--primary": "#D6BA77", "--accent": "#93C69B", "--action": "#D6BA77", "--action-text": "#1A1A1A" },
       logo: "brand/clients/mod.svg?v=1789717242", logoWhite: "brand/clients/mod-white.svg?v=1789717242",
       icon: "brand/clients/mod-icon.svg?v=1789717242", iconWhite: "brand/clients/mod-icon-white.svg?v=1789717242",
       railLogoH: 40, railIconH: 40, loginAlt: "Ministry of Defense",
