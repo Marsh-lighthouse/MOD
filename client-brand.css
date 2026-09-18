@@ -41,14 +41,14 @@
 /* ── Per-brand login page overrides ── */
 
 /* client logos have different proportions than the Lighthouse lockup */
-html[data-client-brand="mod"] .lg-logo { height: 40px; display: block !important; }
+html[data-client-brand="mod"] .lg-logo { height: 56px; display: block !important; }
 html[data-client-brand="mod"] .lg-logo--white { display: none !important; }
 html[data-client-brand="mod"][data-login-style="cinematic"] .lg-logo,
 html[data-client-brand="mod"][data-login-style="midnight"] .lg-logo,
 html[data-client-brand="mod"][data-login-style="celestial"] .lg-logo { display: none !important; }
 html[data-client-brand="mod"][data-login-style="cinematic"] .lg-logo--white,
 html[data-client-brand="mod"][data-login-style="midnight"] .lg-logo--white,
-html[data-client-brand="mod"][data-login-style="celestial"] .lg-logo--white { display: block !important; height: 50px; margin-bottom: 30px; }
+html[data-client-brand="mod"][data-login-style="celestial"] .lg-logo--white { display: block !important; height: 56px; margin-bottom: 30px; }
 
 html[data-client-brand="generali"] .lg-logo { height: 58px; display: block !important; }
 html[data-client-brand="generali"] .lg-logo--white { display: none !important; }
