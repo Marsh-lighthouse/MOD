@@ -958,7 +958,7 @@ function PlAddSkills({ current, onClose, onSave }) {
   const addSug = (ci, s) => setSel((x) => x.map((arr, i) => (i === ci && !arr.includes(s) ? [...arr, s] : arr)));
   plUseEffect(() => { const onKey = (e) => { if (e.key === "Escape") onClose(); }; document.addEventListener("keydown", onKey); return () => document.removeEventListener("keydown", onKey); }, []);
   return ReactDOM.createPortal(
-    <div className="pl-fullmodal" onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 300, background: "rgba(0,15,71,.45)", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "clamp(20px,5vh,60px) 20px", overflowY: "auto" }}>
+    <div className="pl-fullmodal" onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 300, background: "rgba(0,0,0,.45)", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "clamp(20px,5vh,60px) 20px", overflowY: "auto" }}>
       <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 720, background: "var(--card)", borderRadius: 16, boxShadow: "0 40px 90px rgba(0,15,71,.35)", overflow: "hidden", display: "flex", flexDirection: "column", maxHeight: "calc(100vh - 80px)" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, padding: "20px 24px", borderBottom: "1px solid " + eLINE, flexShrink: 0 }}>
           <h1 className="serif" style={{ fontSize: 21, color: eMID, margin: 0 }}>Add Skills</h1>
@@ -1000,7 +1000,7 @@ function PlAddSkills({ current, onClose, onSave }) {
 function PlConfirmDelete({ label, onNo, onYes }) {
   plUseEffect(() => { const onKey = (e) => { if (e.key === "Escape") onNo(); }; document.addEventListener("keydown", onKey); return () => document.removeEventListener("keydown", onKey); }, []);
   return ReactDOM.createPortal(
-    <div onClick={onNo} style={{ position: "fixed", inset: 0, zIndex: 320, background: "rgba(0,15,71,.45)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
+    <div onClick={onNo} style={{ position: "fixed", inset: 0, zIndex: 320, background: "rgba(0,0,0,.45)", display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
       <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 420, background: "var(--card)", borderRadius: 16, boxShadow: "0 40px 90px rgba(0,15,71,.35)", padding: "26px 26px 22px", textAlign: "center" }}>
         <div style={{ width: 54, height: 54, margin: "0 auto 16px", borderRadius: "50%", background: "color-mix(in srgb, var(--danger) 10%, transparent)", border: "1px solid color-mix(in srgb, var(--danger) 22%, transparent)", color: "var(--danger)", display: "flex", alignItems: "center", justifyContent: "center" }}><PlTrash size={24} /></div>
         <h2 style={{ fontFamily: "var(--sans)", fontSize: 21, fontWeight: 700, color: eMID, margin: "0 0 8px" }}>Are you sure you want to delete?</h2>

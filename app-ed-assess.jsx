@@ -117,7 +117,7 @@ function EdPrivacyNotice({ onClose }) {
     ["Technical data", "Device, browser, IP address, and proctoring session data."],
   ];
   return (
-    <div onClick={onClose} style={{ position: "fixed", inset: 0, background: "rgba(0,15,71,.45)", backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)", zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+    <div onClick={onClose} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.45)", backdropFilter: "blur(3px)", WebkitBackdropFilter: "blur(3px)", zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
       <div onClick={(e) => e.stopPropagation()} style={{ background: "var(--card)", border: "1px solid var(--line)", borderRadius: 18, width: "min(820px, 100%)", maxHeight: "88vh", display: "flex", flexDirection: "column", overflow: "hidden", boxShadow: "0 24px 70px rgba(0,15,71,.3)" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 22px", borderBottom: "1px solid " + eLINE, flexShrink: 0 }}>
           <span style={{ fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, letterSpacing: 0.4, color: eBLUE }}>MARSH · CONFIDENTIAL</span>

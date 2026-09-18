@@ -1454,7 +1454,7 @@ function DashEditorial({ initialRoute } = {}) {
         </div>
       </main>
       {mobileNav && (
-        <div onClick={() => setMobileNav(false)} className="ed-drawer-bg" style={{ position: "absolute", inset: 0, background: "rgba(0,15,71,.45)", zIndex: 90 }}>
+        <div onClick={() => setMobileNav(false)} className="ed-drawer-bg" style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,.45)", zIndex: 90 }}>
           <div onClick={(e) => e.stopPropagation()} className="ed-rail-drawer" style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 256, zIndex: 91, boxShadow: "0 0 50px rgba(0,0,0,.35)" }}>
             <EdRail activeId={activeId} onNav={(id) => { openProgram(id); setMobileNav(false); }} collapsed={false} onToggle={() => setMobileNav(false)} items={railItems} />
           </div>
