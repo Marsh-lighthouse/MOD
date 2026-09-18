@@ -70,7 +70,8 @@ html[dir="rtl"] .lh-cookie-close { right: auto; left: -14px; }
 
 /* ── Per-brand banner background ── */
 html[data-client-brand="generali"] .lh-cookie { background: #7E1310; }
-html[data-client-brand="mod"] .lh-cookie { background: #2E4257; }
+/* MOD dark teal from the brand palette (#29504D) — replaces the leftover DGE steel-navy. */
+html[data-client-brand="mod"] .lh-cookie { background: #29504D; }
 
 /* ── Manage Cookies side panel ── */
 .lh-cookie-scrim {
