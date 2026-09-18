@@ -192,7 +192,7 @@ function PlStars({ value, onChange, readOnly }) {
 // selected segment is a navy pill with off-white (#F7F3EE) text; the unselected
 // segment is bare navy text; Noto Sans 400. Replaces the old green on/off switch.
 function PlPubToggle({ isPublic, onToggle }) {
-  const seg = (on) => ({ background: on ? "var(--pl-fill)" : "transparent", color: on ? "var(--pl-fill-on)" : "var(--pl-fill)", border: "none", borderRadius: 999, padding: "4px 14px", fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, lineHeight: 1.4, cursor: "pointer", whiteSpace: "nowrap" });
+  const seg = (on) => ({ background: on ? "var(--pl-fill)" : "transparent", color: on ? "var(--pl-fill-on)" : "var(--ink)", border: "none", borderRadius: 999, padding: "4px 14px", fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, lineHeight: 1.4, cursor: "pointer", whiteSpace: "nowrap" });
   return (
     <div role="group" aria-label="Skill visibility" title={isPublic ? "Public — everyone can see this" : "Private — only you can see this"}
       style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: 2, borderRadius: 999, border: "1px solid var(--pl-fill)", background: "transparent", flexShrink: 0 }}>
@@ -650,7 +650,7 @@ function PlCommentItem({ item, onReply, role = "me", names, onResolve, skillLabe
   const submit = () => { const t = text.trim(); if (!t) return; onReply(t); setText(""); setReplying(false); setShowReplies(true); };
   return (
     <div style={{ display: "flex", gap: 11, marginBottom: 16 }}>
-      <span style={{ width: 34, height: 34, borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: mine ? eBLUE : "var(--surface-deep)", color: "var(--action-text)", fontFamily: "var(--sans)", fontSize: 11.5, fontWeight: 700 }}>{plInitials(name)}</span>
+      <span style={{ width: 34, height: 34, borderRadius: "50%", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", background: mine ? eBLUE : "var(--surface-deep)", color: "#fff", fontFamily: "var(--sans)", fontSize: 11.5, fontWeight: 700 }}>{plInitials(name)}</span>
       <div style={{ flex: 1, minWidth: 0 }}>
         {/* The skill this comment belongs to, written small above it — so the flat
             "everything on first view" feed keeps its context without a tag pill. */}
@@ -896,7 +896,7 @@ function PlComments({ chip, onClose, onOpen, role = "me", owner = "john", names,
                 style={{ width: "100%", textAlign: "left", display: "flex", gap: 11, alignItems: "flex-start", padding: 12, borderRadius: 4, border: "1px solid " + (r.unread ? "color-mix(in srgb, var(--danger) 30%, transparent)" : "#DEDBD6"), background: "var(--card)", cursor: "pointer", marginBottom: 8, boxSizing: "border-box" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "color-mix(in srgb, var(--primary) 6%, var(--card))"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "var(--card)"}>
-                <span style={{ width: 36, height: 36, borderRadius: "50%", background: mine ? eBLUE : "var(--surface-deep)", color: "var(--action-text)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--sans)", fontSize: 11.5, fontWeight: 700, flexShrink: 0 }}>{r.last ? plInitials(lastName) : <I.chat size={16} />}</span>
+                <span style={{ width: 36, height: 36, borderRadius: "50%", background: mine ? eBLUE : "var(--surface-deep)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "var(--sans)", fontSize: 11.5, fontWeight: 700, flexShrink: 0 }}>{r.last ? plInitials(lastName) : <I.chat size={16} />}</span>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <span style={{ flex: 1, minWidth: 0, fontFamily: "var(--sans)", fontSize: 15, fontWeight: 400, color: eMID, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{r.name}</span>
@@ -1822,7 +1822,7 @@ function PlSeg({ value, onChange, readOnly }) {
     <div role="group" aria-label="Completion" style={{ display: "inline-flex", height: 32, boxSizing: "border-box", border: "1px solid var(--pl-fill)", borderRadius: 2, overflow: "hidden" }}>
       {steps.map((s, i) => { const on = (value || 0) === s; return (
         <button key={s} type="button" aria-pressed={on} className="pl-seg-btn" onClick={readOnly ? undefined : () => onChange(s)}
-          style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 40, padding: "0 12px", background: on ? "var(--pl-fill)" : "transparent", color: on ? "var(--pl-fill-on)" : "var(--pl-fill)", border: "none", borderLeft: i > 0 ? "1px solid var(--pl-fill)" : "none", fontFamily: "var(--sans)", fontSize: 15, fontWeight: 700, cursor: readOnly ? "default" : "pointer" }}>{s}</button>
+          style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 40, padding: "0 12px", background: on ? "var(--pl-fill)" : "transparent", color: on ? "var(--pl-fill-on)" : "var(--ink)", border: "none", borderLeft: i > 0 ? "1px solid var(--pl-fill)" : "none", fontFamily: "var(--sans)", fontSize: 15, fontWeight: 700, cursor: readOnly ? "default" : "pointer" }}>{s}</button>
       ); })}
     </div>
   );
